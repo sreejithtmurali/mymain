@@ -30,7 +30,7 @@ class Products {
   num? stock;
   String? category;
   dynamic imageUrl;
-  dynamic user;
+  num? user;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

@@ -1,14 +1,14 @@
 import 'Data.dart';
 import 'dart:convert';
 
-GetAllProducts getAllProductsFromJson(String str) => GetAllProducts.fromJson(json.decode(str));
-String getAllProductsToJson(GetAllProducts data) => json.encode(data.toJson());
-class GetAllProducts {
-  GetAllProducts({
+AllproductsResp allproductsRespFromJson(String str) => AllproductsResp.fromJson(json.decode(str));
+String allproductsRespToJson(AllproductsResp data) => json.encode(data.toJson());
+class AllproductsResp {
+  AllproductsResp({
       this.msg, 
       this.data,});
 
-  GetAllProducts.fromJson(dynamic json) {
+  AllproductsResp.fromJson(dynamic json) {
     msg = json['Msg'];
     if (json['data'] != null) {
       data = [];

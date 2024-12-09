@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 
 import '../../../constants/assets.gen.dart';
 import '../../tools/screen_size.dart';
+import '../../widgets/shared.dart';
 import 'login_viewmodel.dart';
 
 class LoginView extends StatelessWidget {
@@ -14,6 +15,7 @@ class LoginView extends StatelessWidget {
       onViewModelReady: (model) => {},
       builder: (context, model, child) {
         return Scaffold(
+          appBar: AppBar(leading: backButton(color: Colors.red,onPressed: (){}),),
           body: Form(
             key: model.formkey,
             child: Column(

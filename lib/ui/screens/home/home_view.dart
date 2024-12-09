@@ -12,12 +12,22 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
-      onViewModelReady: (model) => {},
+      onViewModelReady: (model)  {
+        model.getproducts();
+      },
       builder: (BuildContext context, HomeViewModel model, child) {
         return Scaffold(
           appBar: AppBar(
             title: Text("Hai $username"),
           ),
+          body: ListView.builder(itemCount: model.plist!.length,
+            itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              leading: Text("${index}"),
+              title: Text("${model.plist![index].name}"),
+              subtitle: Text("${model.plist![index].description}"),
+            );
+            },),
 
         );
       },
