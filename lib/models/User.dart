@@ -21,7 +21,7 @@ class User {
   }
   String? refresh;
   String? access;
-  num? id;
+  int? id;
   String? name;
   String? place;
   String? email;
